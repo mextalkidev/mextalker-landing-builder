@@ -5,8 +5,10 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import FAQSection from '@/components/FAQSection';
 import ContactForm from '@/components/ContactForm';
 import ScrollAnimation from '@/components/ScrollAnimation';
+import TeamCard from '@/components/TeamCard';
 import { Button } from '@/components/ui/button';
 import { Download, Calendar, Users, MessageSquare, Utensils, Car, Gift, ArrowRight, ChevronDown } from 'lucide-react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const Index = () => {
   useEffect(() => {
@@ -50,9 +52,10 @@ const Index = () => {
       <section 
         className="min-h-screen flex items-center justify-center pt-20 pb-10 px-4 relative" 
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://source.unsplash.com/random/1920x1080/?mexico-city")',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/mexico-city-hero.jpg")',
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
       >
         <div className="container text-center text-white relative z-10 max-w-4xl">
@@ -228,27 +231,86 @@ const Index = () => {
           
           <ScrollAnimation>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="rounded-lg overflow-hidden shadow-md aspect-video">
-                <img 
-                  src="https://source.unsplash.com/random/600x400/?mexico-city-food" 
-                  alt="Mexican Cuisine" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="rounded-lg overflow-hidden shadow-md">
+                <AspectRatio ratio={16/9}>
+                  <img 
+                    src="/mexican-cuisine.jpg" 
+                    alt="Mexican Cuisine" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
+                <div className="p-4 bg-white">
+                  <h3 className="font-semibold text-lg">Mexican Cuisine</h3>
+                  <p className="text-gray-600 text-sm">Experience the rich flavors of authentic Mexican dishes</p>
+                </div>
               </div>
-              <div className="rounded-lg overflow-hidden shadow-md aspect-video">
-                <img 
-                  src="https://source.unsplash.com/random/600x400/?mexico-city-architecture" 
-                  alt="Mexico City Architecture" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="rounded-lg overflow-hidden shadow-md">
+                <AspectRatio ratio={16/9}>
+                  <img 
+                    src="/mexican-architecture.jpg" 
+                    alt="Mexico City Architecture" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
+                <div className="p-4 bg-white">
+                  <h3 className="font-semibold text-lg">Mexican Architecture</h3>
+                  <p className="text-gray-600 text-sm">Discover the beautiful and historic buildings around the city</p>
+                </div>
               </div>
-              <div className="rounded-lg overflow-hidden shadow-md aspect-video">
-                <img 
-                  src="https://source.unsplash.com/random/600x400/?mexican-culture" 
-                  alt="Mexican Culture" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="rounded-lg overflow-hidden shadow-md">
+                <AspectRatio ratio={16/9}>
+                  <img 
+                    src="/mexican-culture.jpg" 
+                    alt="Mexican Culture" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
+                <div className="p-4 bg-white">
+                  <h3 className="font-semibold text-lg">Mexican Culture</h3>
+                  <p className="text-gray-600 text-sm">Immerse yourself in the vibrant cultural experiences</p>
+                </div>
               </div>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </section>
+
+      {/* Meet the Team Section */}
+      <section id="team" className="section-padding bg-gray-50">
+        <div className="container mx-auto">
+          <ScrollAnimation>
+            <h2 className="text-4xl font-bold text-center mb-6">Meet the Team</h2>
+            <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+              Get to know the four key members who will guide you throughout your Mextalker experience. Our team of experts will ensure you have an unforgettable time in Mexico City.
+            </p>
+          </ScrollAnimation>
+          
+          <ScrollAnimation>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <TeamCard
+                name="Allfa"
+                role="Tour Guide"
+                bio="Experienced tour guide who knows all the hidden gems of Mexico City."
+                image="/team-allfa.jpg"
+              />
+              <TeamCard
+                name="Alondra"
+                role="Conversation Club Host"
+                bio="Host of the Mextalki conversation club, known for her engaging talks and valuable feedback."
+                image="/team-alondra.jpg"
+              />
+              <TeamCard
+                name="Efra"
+                role="Spanish Teacher"
+                bio="Spanish teacher with over 6 years of experience and co-host of the 'Cheleando con Mextalki' podcast."
+                image="/team-efra.jpg"
+              />
+              <TeamCard
+                name="Diego"
+                role="Spanish Teacher"
+                bio="Passionate teacher with 10 years of experience and co-host of the 'Cheleando con Mextalki' podcast."
+                image="/team-diego.jpg"
+              />
             </div>
           </ScrollAnimation>
         </div>
